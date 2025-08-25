@@ -1,0 +1,130 @@
+
+body {
+  font-family: $font-main;
+  background: $bg-gradient;
+  background-size: 100% 150%; 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    margin: 40px 0;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+.projects {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .card {
+    width: $card-width;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    background: $color-white;
+    box-shadow: $shadow-default;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    h2 {
+      margin: 20px 0 10px;
+      font-size: 20px;
+    }
+
+    a {
+      text-decoration: none;
+
+      button {
+        margin-bottom: 20px;
+        padding: 8px 18px;
+        border: 1px solid $color-black;
+        background: $color-white;
+        font-size: 15px;
+        cursor: pointer;
+
+        &:hover {
+          background: $color-black;
+          color: $color-white;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+
+  .add-card {
+    text-decoration: none;
+    width: $card-width;
+    height: 370px;
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $color-light-gray;
+    cursor: pointer;
+
+    .circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: $color-black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+      font-weight: bold;
+      color: $color-white;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover .circle {
+      transform: scale(1.1);
+    }
+
+    &:hover {
+      background: $color-dark-gray;
+    }
+  }
+}
+
+/* 📱 Mobile (до 600px) */
+@media (max-width: 600px) {
+  .projects {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    .card, .add-card {
+      width: 90%;
+      max-width: 350px;
+    }
+  }
+
+  body h1 {
+    font-size: 22px;
+  }
+}
+
+/* 📲 Tablet (600px – 900px) */
+@media (min-width: 600px) and (max-width: 900px) {
+  .projects {
+    justify-content: center;
+    gap: 30px;
+
+    .card, .add-card {
+      width: 45%;
+      max-width: 400px;
+    }
+  }
+}
